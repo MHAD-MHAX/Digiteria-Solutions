@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'EnterpriseRegular';
+  src: url('https://ext.same-assets.com/722840788/3778143707.bin') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'EnterpriseBold';
+  src: url('https://ext.same-assets.com/722840788/2077033985.bin') format('woff2');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  html {
+    font-family: 'EnterpriseRegular', sans-serif;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-white text-optum-blue;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-sans-bold;
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl leading-tight;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl leading-tight;
+  }
+
+  h3 {
+    @apply text-2xl md:text-3xl leading-tight;
+  }
+
+  h4 {
+    @apply text-xl md:text-2xl leading-tight;
+  }
+
+  button, a.btn {
+    @apply font-sans-bold rounded-full transition-all duration-200;
+  }
+}
+
+@layer components {
+  .container {
+    @apply px-4 mx-auto max-w-7xl;
+  }
+
+  .btn-primary {
+    @apply bg-optum-blue text-white hover:bg-optum-blue/90 px-6 py-3;
+  }
+
+  .btn-secondary {
+    @apply bg-white text-optum-blue border border-optum-blue hover:bg-optum-teal/20 px-6 py-3;
+  }
+
+  .section {
+    @apply py-12 md:py-16;
+  }
+}
