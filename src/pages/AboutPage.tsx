@@ -2,6 +2,8 @@ import { Link } from 'react-router-dom';
 import Hero from '../components/ui/Hero';
 import ContactForm from '../components/ui/ContactForm';
 import ServiceCard from '../components/ui/ServiceCard';
+
+import Image from "../Images/Health2.mp4";
 import { FaUserMd, FaClinicMedical, FaPrescriptionBottleAlt, FaChartLine, FaFlask } from 'react-icons/fa';
 
 const AboutPage = () => {
@@ -77,7 +79,7 @@ const AboutPage = () => {
       <Hero
         title="Who we are"
         description="Digiteria Solutions Limited is a health-tech company committed to driving digital transformation in healthcare across Nigeria. We specialize in developing digital products and platforms that streamline health information management. From digital portfolio management and electronic patient records to comprehensive healthcare marketplace solutions, our services are designed to make healthcare delivery smarter, faster, and more efficient."
-        backgroundImage="https://ext.same-assets.com/4069049614/1243863585.webp"
+        
       />
 
 

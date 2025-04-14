@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { FiMenu, FiX } from 'react-icons/fi';
 import { FaTwitter, FaLinkedin, FaYoutube } from 'react-icons/fa';
 
+import Logo from "../layout/Images/Logo.jpg";
+
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isCookieBannerOpen, setIsCookieBannerOpen] = useState(true);
@@ -10,17 +12,6 @@ const Navbar = () => {
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
-
-  const mainNavLinks = [
-    { name: 'About us', path: '/about-us' },
-    { name: 'Products', path: 'https://clouder-nu.vercel.app/' },
-  ];
-
-  const secondaryNavLinks = [
-    { name: 'To optum.com', path: 'https://www.optum.com/' },
-    { name: 'Contact us', path: '/contact-us' },
-    { name: 'Optum Help Centre', path: 'https://www.optumhelpcentre.com/csm' },
-  ];
 
   return (
     <header className="relative">
@@ -55,54 +46,57 @@ const Navbar = () => {
         </div>
       )}
 
-    
-   
-{/* Main Nav */}
-<div className="bg-white py-2 shadow-sm">
-  <div className="container mx-auto">
-    <nav className="flex items-center justify-between">
-      
-      {/* Left: Navigation Links */}
-      <ul className="flex space-x-20 w-full justify-start">
-        {mainNavLinks.map((link, index) => (
-          <li key={index}>
-            <Link
-              to={link.path}
-              className="py-2 block hover:text-optum-red transition-colors"
-            >
-              {link.name}
-            </Link>
-          </li>
-        ))}
-      </ul>
+      {/* Main Nav */}
+      <div className="bg-white py-2 shadow-sm">
+        <div className="container mx-auto">
+          <nav className="flex items-center justify-between">
+            {/* Left: Navigation Links */}
+            <ul className="flex space-x-10 w-full justify-start">
+              <li>
+                <Link
+                  to="/about-us"
+                  className="py-2 block hover:text-optum-red transition-colors"
+                >
+                  About us
+                </Link>
+              </li>
+              <li>
+                <a
+                  href="https://clouder-nu.vercel.app/"
+                  className="py-2 block hover:text-optum-red transition-colors"
+                >
+                  Products
+                </a>
+              </li>
+            </ul>
 
-      {/* Centered Logo */}
-      <div className="absolute left-1/2 transform -translate-x-1/2">
-        <Link to="/">
-          <img
-            src="https://ext.same-assets.com/4069049614/4214865602.webp"
-            alt="Optum Logo"
-            className="h-8"
-          />
-        </Link>
+            {/* Centered Logo */}
+            <div className="absolute left-1/2 transform -translate-x-1/2">
+              <Link to="/">
+                <img
+                  src={Logo}
+                  alt="Optum Logo"
+                  className="h-12 rounded-full"  
+                />
+              </Link>
+            </div>
+
+            {/* Right: Hamburger Menu for Mobile */}
+            <div className="lg:hidden">
+              <button onClick={toggleMenu} aria-label="Open menu" className="p-2">
+                <FiMenu size={24} />
+              </button>
+            </div>
+          </nav>
+        </div>
       </div>
-    </nav>
-  </div>
-</div>
-
 
       {/* Mobile Menu */}
       {isMenuOpen && (
         <div className="fixed inset-0 bg-white z-50 lg:hidden overflow-y-auto">
           <div className="container mx-auto py-4">
-            <div className="flex justify-between items-center mb-8">
-              <Link to="/" onClick={() => setIsMenuOpen(false)}>
-                <img
-                  src="https://ext.same-assets.com/4069049614/4214865602.webp"
-                  alt="Optum Logo"
-                  className="h-8"
-                />
-              </Link>
+            {/* Close Button */}
+            <div className="flex justify-end mb-8">
               <button
                 onClick={toggleMenu}
                 aria-label="Close menu"
@@ -112,30 +106,64 @@ const Navbar = () => {
               </button>
             </div>
 
+            {/* Mobile Nav with Logo in Middle */}
             <nav>
-              <ul className="space-y-4">
-                {mainNavLinks.map((link, index) => (
-                  <li key={index}>
-                    <Link
-                      to={link.path}
-                      className="block py-2 text-xl border-b border-gray-100"
-                      onClick={() => setIsMenuOpen(false)}
-                    >
-                      {link.name}
-                    </Link>
-                  </li>
-                ))}
- 
+              <ul className="space-y-4 text-center">
+                <li>
+                  <Link
+                    to="/about-us"
+                    className="block py-2 text-xl border-b border-gray-100"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    About Us
+                  </Link>
+                </li>
+
+                <li>
+                  <Link to="/" onClick={() => setIsMenuOpen(false)}>
+                    <img
+                      src={Logo}
+                      alt="Optum Logo"
+                      className="h-10 mx-auto rounded-full"  
+                    />
+                  </Link>
+                </li>
+
+                <li>
+                  <a
+                    href="https://clouder-nu.vercel.app/"
+                    className="block py-2 text-xl border-b border-gray-100"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Products
+                  </a>
+                </li>
+
                 <li className="pt-4">
                   <h3 className="text-lg font-sans-bold mb-4">Follow Us</h3>
-                  <div className="flex space-x-4">
-                    <a href="https://x.com/Optum_UK" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+                  <div className="flex justify-center space-x-4">
+                    <a
+                      href="https://x.com/Optum_UK"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Twitter"
+                    >
                       <FaTwitter size={24} />
                     </a>
-                    <a href="https://www.linkedin.com/company/optumuk/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                    <a
+                      href="https://www.linkedin.com/company/optumuk/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="LinkedIn"
+                    >
                       <FaLinkedin size={24} />
                     </a>
-                    <a href="https://www.youtube.com/@Optum_UK" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                    <a
+                      href="https://www.youtube.com/@Optum_UK"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="YouTube"
+                    >
                       <FaYoutube size={24} />
                     </a>
                   </div>

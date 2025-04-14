@@ -5,6 +5,10 @@ import ServiceCard from '../components/ui/ServiceCard';
 import ContactForm from '../components/ui/ContactForm';
 import { FaHospital, FaPrescriptionBottleAlt, FaUserMd, FaChartLine, FaClinicMedical, FaFlask } from 'react-icons/fa';
 
+
+import Vid1 from "../Images/Health1.mp4";
+
+
 const HomePage = () => {
   const solutions = [
     {
@@ -111,21 +115,27 @@ const HomePage = () => {
               <p className="text-optum-blue/80 mb-6">
               At Digiteria Solutions Limited, we aim to revolutionize healthcare and healthcare education through innovative software solutions that empower providers and enhance patient care.
               </p>
-              <Link to="/about-us" className="btn-primary inline-block">
-                Find out more
-              </Link>
+              <Link
+  to="/about-us"
+  className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 inline-block"
+>
+  Find out more
+</Link>
             </div>
             <div className="relative">
-              <img
-                src="https://ext.same-assets.com/4069049614/1880410844.webp"
-                alt="Doctor with iPad"
-                className="rounded-lg shadow-lg w-full"
-              />
+            <video
+  src={Vid1}
+  autoPlay
+  loop
+  muted
+  playsInline
+  className="rounded-lg shadow-lg w-full"
+>
+  Your browser does not support the video tag.
+</video>
               <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
                 {/* Play button */}
-                <div className="bg-white rounded-full h-16 w-16 flex items-center justify-center shadow-lg">
-                  <div className="w-0 h-0 border-t-[10px] border-t-transparent border-l-[18px] border-l-optum-blue border-b-[10px] border-b-transparent ml-1"></div>
-                </div>
+              
               </div>
             </div>
           </div>

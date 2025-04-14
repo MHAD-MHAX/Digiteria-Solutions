@@ -1,6 +1,9 @@
 import { Link } from 'react-router-dom';
 import { FaTwitter, FaLinkedin, FaYoutube } from 'react-icons/fa';
 
+
+import Logo from "../layout/Images/Logo.jpg"
+
 const Footer = () => {
   const links = {
     links: [
@@ -26,34 +29,38 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-optum-blue text-white pt-12 pb-6">
-      <div className="container">
+    <footer className="bg-[#1D2A44] text-white pt-12 pb-6">
+      <div className="container ">
         {/* Newsletter Signup Section */}
         <div className="mb-12 pb-8 border-b border-optum-blue-light/30">
-          <h3 className="text-2xl mb-4">Sign up for our monthly newsletter.</h3>
-          <div className="max-w-md flex flex-col sm:flex-row gap-3">
-            <div className="flex-grow">
-              <input
-                type="email"
-                placeholder="Your email address*"
-                className="w-full px-4 py-3 rounded-full bg-white text-optum-blue focus:outline-none"
-              />
-            </div>
-            <button className="bg-optum-red hover:bg-optum-red/90 text-white px-6 py-3 rounded-full transition-all duration-200 whitespace-nowrap">
-              Subscribe
-            </button>
-          </div>
-          <div className="mt-3 flex items-center gap-2">
-            <input type="checkbox" id="privacy-policy" className="rounded" />
-            <label htmlFor="privacy-policy" className="text-sm">
-              I have read and agree to the{' '}
-              <Link to="/privacy-policy" className="underline">
-                privacy policy
-              </Link>
-              *
-            </label>
-          </div>
-        </div>
+  <div className="flex flex-col items-center text-center">
+    <h3 className="text-2xl mb-4">Sign up for our monthly newsletter.</h3>
+    
+    <div className="max-w-md w-full flex flex-col sm:flex-row gap-3 justify-center">
+      <div className="flex-grow">
+        <input
+          type="email"
+          placeholder="Your email address*"
+          className="w-full px-4 py-3 rounded-full bg-white text-optum-blue focus:outline-none"
+        />
+      </div>
+      <button className="bg-optum-red hover:bg-optum-red/90 text-white px-6 py-3 rounded-full transition-all duration-200 whitespace-nowrap">
+        Subscribe
+      </button>
+    </div>
+    
+    <div className="mt-3 flex items-center gap-2 justify-center">
+      <input type="checkbox" id="privacy-policy" className="rounded" />
+      <label htmlFor="privacy-policy" className="text-sm">
+        I have read and agree to the{' '}
+        <Link to="/privacy-policy" className="underline">
+          privacy policy
+        </Link>
+        *
+      </label>
+    </div>
+  </div>
+</div>
 
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
@@ -61,32 +68,16 @@ const Footer = () => {
           <div className="md:col-span-3">
             <Link to="/">
               <img
-                src="https://ext.same-assets.com/4069049614/4214865602.webp"
+                src={Logo}
                 alt="Optum Logo"
-                className="h-8 invert"
+                className="h-13"
               />
             </Link>
           </div>
 
-          {/* Links */}
-          <div className="md:col-span-3">
-            <h5 className="font-sans-bold text-lg mb-4">Links</h5>
-            <ul className="space-y-1">
-              {links.links.map((link, index) => (
-                <li key={index}>
-                  <Link
-                    to={link.path}
-                    className="text-sm hover:text-optum-teal transition-colors py-1 block"
-                  >
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
 
           {/* Contact Info */}
-          <div className="md:col-span-3">
+          <div className="md:col-span-3 pt-10">
             <h5 className="font-sans-bold text-lg mb-4">Contact us</h5>
             <ul className="space-y-1">
               {links.contact.map((link, index) => (
@@ -103,7 +94,7 @@ const Footer = () => {
           </div>
 
           {/* Location */}
-          <div className="md:col-span-3">
+          <div className="md:col-span-3 pt-10 ">
             <h5 className="font-sans-bold text-lg mb-4">Find us</h5>
             <address className="not-italic text-sm mb-4">
               Fulford Grange, Micklefield Lane,
