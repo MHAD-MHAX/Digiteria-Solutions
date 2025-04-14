@@ -51,7 +51,7 @@ const Navbar = () => {
         <div className="container mx-auto">
           <nav className="flex items-center justify-between">
             {/* Left: Navigation Links */}
-            <ul className="flex space-x-8 w-full justify-start">
+            <ul className="flex space-x-5 w-full justify-start">
               <li>
                 <Link
                   to="/about-us"
