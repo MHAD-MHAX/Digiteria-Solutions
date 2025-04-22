@@ -98,9 +98,9 @@ const Footer = () => {
             <address className="not-italic text-sm mb-4">
               15 ijumu street,
               <br />
-              GRA,ilorin
+              GRA, Ilorin,
               <br />
-              Kwara State 
+              Kwara State.
             </address>
   
           </div>
