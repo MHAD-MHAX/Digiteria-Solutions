@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { FaTwitter, FaLinkedin, FaYoutube } from 'react-icons/fa';
+import { FaTwitter, FaLinkedin, FaYoutube, FaInstagram } from 'react-icons/fa';
 
 
 import Logo from "../layout/Images/Logo.jpg"
@@ -15,9 +15,8 @@ const Footer = () => {
       { name: 'Tax strategy', path: '/tax-strategy' },
     ],
     contact: [
-      { name: 'Get in touch', path: '/contact-us' },
-      { name: 'Media enquiries', path: '/media-enquiries' },
-      { name: '0330 024 1269', path: 'tel:0330-024-1269' },
+      { name: 'Get in touch', path: 'https://clouder-nu.vercel.app/' },
+  
     ],
     legal: [
       { name: 'Privacy Policy', path: '/privacy-policy' },
@@ -97,20 +96,13 @@ const Footer = () => {
           <div className="md:col-span-3 pt-10 ">
             <h5 className="font-sans-bold text-lg mb-4">Find us</h5>
             <address className="not-italic text-sm mb-4">
-              Fulford Grange, Micklefield Lane,
+              15 ijumu street,
               <br />
-              Rawdon, Leeds,
+              GRA,ilorin
               <br />
-              LS19 6BA
+              Kwara State 
             </address>
-            <Link
-              to="https://www.google.com/maps/dir/?api=1&destination_place_id=ChIJlb9ilV7ie0gRiWe6UT5vPEQ&destination=Head+office"
-              className="text-sm hover:text-optum-teal transition-colors inline-block"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Get directions
-            </Link>
+  
           </div>
         </div>
 
@@ -118,32 +110,15 @@ const Footer = () => {
         <div className="mt-12 pt-8 border-t border-optum-blue-light/30 flex flex-col md:flex-row justify-between items-center">
           <div className="flex space-x-4 mb-6 md:mb-0">
             <a
-              href="https://x.com/Optum_UK"
+              href="https://www.instagram.com/digiteriasolutions?igsh=MXFhOW85ZmFnb3pvMg%3D%3D&utm_source=qr"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Twitter"
+              aria-label="Instagram"
               className="hover:text-optum-teal transition-colors"
             >
-              <FaTwitter size={22} />
+              <FaInstagram size={22} />
             </a>
-            <a
-              href="https://www.linkedin.com/company/optumuk/"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="LinkedIn"
-              className="hover:text-optum-teal transition-colors"
-            >
-              <FaLinkedin size={22} />
-            </a>
-            <a
-              href="https://www.youtube.com/@Optum_UK"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="YouTube"
-              className="hover:text-optum-teal transition-colors"
-            >
-              <FaYoutube size={22} />
-            </a>
+        
           </div>
 
           {/* Copyright */}
